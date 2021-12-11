@@ -1,0 +1,45 @@
+<ul class="nav">
+    {% if is_authenticated %}
+    <li class="nav-item">
+        <a class="nav-link" href="#">cart(0)</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link" href="#" data-bs-toggle="dropdown">
+            <i class="far fa-user"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+            {% if is_superuser %}
+                <li><a class="dropdown-item" href="#">Product Management</a></li>
+                {% else %}
+                <li><a class="dropdown-item" href="#">My Profile</a></li>
+            {% endif %}
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+        </ul>
+    </li>
+    {% else %}
+    <li class="nav-item">
+        <a class="nav-link" href="#">Join</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Login</a>
+    </li>
+    {% endif %}
+</ul>
+
+<div class="collapse navbar-collapse" id="dropdown-nav">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a class="nav-link active"href="#">Our gym</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Memberships</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Merchandise</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+        </li>
+    </ul>
+</div>

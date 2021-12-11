@@ -1,84 +1,100 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-    <head>
-        {% block meta %}
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        {% endblock %}
+<head>
+    {% block meta %}
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% endblock %}
 
-        {% block extra_meta %}
-        {% endblock %}
+    {% block extra_meta %}
+    {% endblock %}
 
-        {% block css %}
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        {% endblock %}
+    {% block css %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    {% endblock %}
 
-        {% block extra_css %}
-        {% endblock %}
+    {% block extra_css %}
+    {% endblock %}
 
-        {% block js %}
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        {% endblock %}
+    {% block js %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b9a678ca83.js" crossorigin="anonymous"></script>
+    {% endblock %}
 
-        {% block extra_js %}
-        {% endblock %}
+    {% block extra_js %}
+    {% endblock %}
 
 
-        <title>JoyGym {% block extend_title %}{% endblock %}</title>
-    </head>
-    <body>
-        <header class="container-fluid">
-            <div class="row d-none py-2 d-lg-flex">
-                <div class="col-12 col-md-2 text-end align-content-center">
-                    <a class="navbar-brand text-uppercase fs-2" href="#">jo<strike>g</strike>y<strike>m</strike></a>
-                </div>
-                <div class="col-12 col-md-8">
-                    <ul class="nav justify-content-center align-content-center h-100">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Our gym</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Memberships</a>
-                        </li>
-                        {% if is_authenticated %}
-                            {% if is_superuser %}
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Shop</a>
-                                </li>
-                            {% endif %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Merchandise</a>
-                            </li>
-                        {% endif %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="col-12 col-md-2">
-                    <ul class="nav justify-content-start align-content-center h-100">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Join</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Login</a>
-                        </li>
-                    </ul>
-                </div>
+    <title>JoyGym {% block extend_title %}{% endblock %}</title>
+</head>
+<body>
+    <header class="screen-lg-navbar">
+        <div class="row d-none d-lg-flex" style="background-color: gray;">
+            <div class="col-lg-3">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item pt-1">
+                        <a class="navbar-brand" href="#">Jogym</a>
+                    </li>
+                </ul>
             </div>
-    
-        </header>
-        {% block content %}
-        {% endblock %}
+            <div class="col-lg-6">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Our Gym</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Memberships</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Merchandise</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <ul class="nav justify-content-center">
+                    {% if is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Cart</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Profile</a>
+                        </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Join</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Login</a>
+                            </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </header>
+        <!-- Mobile header goes here -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light d-lg-none">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dropdown-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand me-auto ps-3" href="#">Jogym</a>
+                {% include 'includes/mobile-nav.html' %}
+            </div>
+        </nav>
 
-        {% if messages %}
-        <div class="message-container"></div>
-        {% endif %}
+    {% block content %}
+    {% endblock %}
 
-        {% block postjs %}
-        {% endblock %}
-    </body>
+    {% if messages %}
+    <div class="message-container"></div>
+    {% endif %}
+
+    {% block postjs %}
+    {% endblock %}
+</body>
 </html>
