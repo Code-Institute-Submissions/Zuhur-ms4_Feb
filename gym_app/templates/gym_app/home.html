@@ -4,3 +4,39 @@
 {% block extend_title %}
 | Home
 {% endblock %}
+
+{% block content %}
+
+<div id="homeCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#homeCarousel" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active"></li>
+        <li data-target="#homeCarousel" data-bs-target="#homeCarousel" data-bs-slide-to="1"></li>
+        <li data-target="#homeCarousel" data-bs-target="#homeCarousel" data-bs-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active" style="background: url('/media/gym-background.jpg') center center no-repeat; background-size: cover;">
+            <div class="carousel-caption">
+                <h5 class="text-uppercase">Exercise or Enjoyment</h5>
+                <p>Why choose? Enjoy reaching your fitness goals with us.</p>
+                <button type="button" class="btn btn-info">Join Now</button>
+            </div>
+        </div>
+        <div class="carousel-item" style="background: url('/media/paintball-big.jpg') center center no-repeat; background-size: cover;">
+            <div class="carousel-caption">
+                <h5 class="text-uppercase">Exercise or Enjoyment</h5>
+                <p>Why choose? Enjoy reaching your fitness goals with us.</p>
+                <button type="button" class="btn btn-info">Join Now</button>
+            </div>
+        </div>
+        <div class="carousel-item" style="background: url('/media/colorful-weights-bg.jpg') center center no-repeat; background-size: cover;">
+            <div class="carousel-caption">
+                <h5 class="text-uppercase">Exercise or Enjoyment</h5>
+                <p>Why choose? Enjoy reaching your fitness goals with us.</p>
+                <button type="button" class="btn btn-info">Join Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}s
