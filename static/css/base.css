@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;500;700&family=Unica+One&family=Volkhov:wght@400;700&display=swap');
+
+/** 
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Unica One', cursive;
+    font-family: 'Volkhov', serif;
+**/
+
+body {
+    font-family: 'Unica One', cursive;
+}
+
 /*------------------------------HOME - carousel */
 .carousel-item {
     height: 85vh;
