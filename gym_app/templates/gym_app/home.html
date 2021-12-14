@@ -37,35 +37,34 @@
         </div>
     </div>
 </div>
-
-<div class="container-fluid">
-    <div id="our-gym-container">
-        <div id="our-gym" class="row py-3">
+<!-- Our gym -->
+<section id="our-gym" class="container-fluid">
+    <div class="row">
+        <div class="gym-description">
             <div class="col">
                 <h1 class="text-center mt-5 px-3"> Our Gym</h1>
-                <p class="text-center mb-5 px-3">At JoGym we offer a gym experience like no other. With equipments at your disposal to reach your fitness goals. Reached a plateu? Feel drained from constant gym? We provide a host of physical activities to respark your joy for fitness.  </p>
+                <hr class="mx-auto">
+                <p class="text-center py-3 mx-auto">At JoGym we offer a gym experience like no other. With equipments at your disposal to reach your fitness goals. Reached a plateu? Feel drained from constant gym? We provide a host of physical activities to respark your joy for fitness.  </p>
             </div>
         </div>
-    
-        <div class="row py-2 m-auto">
-            <div class="col-lg-3 col-md-6 col-12 my-3">
-                <div class="card text-center h-100">
-                    <h5 class="card-header">
-                        <i class="fas fa-dumbbell"></i>
-                    </h5>
-                    <div class="card-body my-auto">
-                        <h5 class="card-title">Regular Gym</h5>
+    </div>
+    <!-- Cards starts here -->
+    <div class="gym-cards p-3">
+        <div class="row h-100">
+            <div class="col-lg-3 col-sm-6 col-xs-12  my-3">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-dumbbell fs-2"></i>
+                        <h5 class="card-title my-3">Regular Gym</h5>
                         <p class="card-text">Build muscle, endurance and stamina with the our state of the art equipment.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-12 my-3">
+            <div class="col-lg-3 col-sm-6 col-xs-12 my-3">
                 <div class="card text-center h-100">
-                    <h5 class="card-header">
-                        <i class="fas fa-users"></i>
-                    </h5>
                     <div class="card-body">
-                        <h5 class="card-title">Our Classes</h5>
+                        <i class="fas fa-users fs-2"></i>
+                        <h5 class="card-title my-3">Our Classes</h5>
                         <ul class="list-unstyled">
                             <li>Cycling</li>
                             <li>Yoha</li>
@@ -77,13 +76,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-12 my-3">
+            <div class="col-lg-3 col-sm-6 col-xs-12 my-3">
                 <div class="card text-center h-100">
-                    <h5 class="card-header">
-                        <i class="fas fa-heart"></i>
-                    </h5>
                     <div class="card-body">
-                        <h5 class="card-title">Joy Activities</h5>
+                        <i class="fas fa-heart fs-2"></i>
+                        <h5 class="card-title my-3">Joy Activities</h5>
                         <ul class="list-unstyled">
                             <li>Paintball</li>
                             <li>Rock climbing</li>
@@ -94,19 +91,20 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-12 my-3">
+            <div class="col-lg-3 col-sm-6 col-xs-12 my-3">
                 <div class="card text-center h-100">
-                    <h5 class="card-header">
-                        <i class="fas fa-utensils"></i>
-                    </h5>
                     <div class="card-body">
-                        <h5 class="card-title">Health Bar</h5>
+                        <i class="fas fa-utensils fs-2"></i>
+                        <h5 class="card-title my-3">Health Bar</h5>
                         <p>Struggle with meal prepping or eating healthy. Visit our health bar for pre/post workout smoothies, shakes or meals.</p>
                     </div>
                 </div>
             </div>
         </div>
+        <!--Cards end-->
     </div>
+
+</section>
 
     <!-- Contact us section-->
     <div class="contact-us">
@@ -132,7 +130,7 @@
         </form>
     </div>
     <!-- Contact us section ends-->
-</div>
+
 
 
 {% endblock %}s

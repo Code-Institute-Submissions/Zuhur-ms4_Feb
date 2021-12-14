@@ -1,9 +1,47 @@
+/*------------------------------HOME - carousel */
 .carousel-item {
-    height: 75vh;
+    height: 85vh;
     width: 100vw;
     background-color: white;
 }
 
 .carousel-indicators [data-bs-target] {
     background-color: blue;
+}
+/*------------------------------HOME - our gym */
+
+#our-gym {
+    background-color: #14213d;
+    color: #e5e5e5;
+}
+
+.gym-description {
+    width: 70%;
+    margin: 0 auto;
+}
+
+hr {
+    width: 4rem;
+    color: #fca311 !important;
+    opacity: 1 !important;
+    height: 10px !important;
+    border-radius: 10px;
+}
+
+.gym-cards {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.card-title {
+    color: #141850;
+}
+
+i {
+    color: #fca311;
+}
+
+.card {
+    background-color: #e5e5e5;
+    color: black;
 }
