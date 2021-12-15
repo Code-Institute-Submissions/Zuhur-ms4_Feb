@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'gym_app'
+    'gym_app',
+    'merchandise',
 ]
 
 MIDDLEWARE = [
