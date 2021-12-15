@@ -10,7 +10,7 @@ body {
     font-family: 'Unica One', cursive;
 }
 
-/*------------------------------HOME - carousel */
+/*------------------------------ HOME - carousel */
 .carousel-item {
     height: 85vh;
     width: 100vw;
@@ -20,7 +20,7 @@ body {
 .carousel-indicators [data-bs-target] {
     background-color: blue;
 }
-/*------------------------------HOME - our gym */
+/*------------------------------ HOME - our gym */
 
 #our-gym {
     background-color: #14213d;
@@ -57,3 +57,15 @@ i {
     background-color: #e5e5e5;
     color: black;
 }
+
+/*------------------------------ HOME -  Contact us */
+
+#contact-us {
+    background-color: #e5e5e5;
+}
+
+.contact-content {
+    padding-top: 10px;
+    width: 80%;
+}
+
