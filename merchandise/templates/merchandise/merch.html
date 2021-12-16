@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extend_title %}
+| Merchandise
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col mt-4 my-2">
+                <h1 class="text-center">Merchandise</h1>
+                <hr class="heading-ruler mx-auto mb-4">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ul class="list-inline text-center">
+                    <a href="#" class="list-inline-item">Women</a>
+                    <a href="##" class="list-inline-item">Men</a>
+                    <a href="#" class="list-inline-item">Other</a>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col text-center">
+                <input class="search-bar" type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="row mt-4">
+            {% for merch in merchandise %}
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 mx-auto">
+                        <img src="{{merch.image_url}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{merch.name}}</h5>
+                            <p class="card-text">{{merch.description}}</p>
+                            <p>€{{merch.price}}</p>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <!--REMOVE BELOW-->
+        <div class="row mt-4">
+            {% for merch in merchandise %}
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 mx-auto">
+                        <img src="{{merch.image_url}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{merch.name}}</h5>
+                            <p class="card-text">{{merch.description}}</p>
+                            <p>€{{merch.price}}</p>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

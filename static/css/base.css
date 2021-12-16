@@ -10,6 +10,14 @@ body {
     font-family: 'Unica One', cursive;
 }
 
+.heading-ruler {
+    width: 4rem;
+    color: #fca311 !important;
+    opacity: 1 !important;
+    height: 10px !important;
+    border-radius: 10px;
+}
+
 /*------------------------------ HOME - carousel */
 .carousel-item {
     height: 85vh;
@@ -30,14 +38,6 @@ body {
 .gym-description {
     width: 70%;
     margin: 0 auto;
-}
-
-hr {
-    width: 4rem;
-    color: #fca311 !important;
-    opacity: 1 !important;
-    height: 10px !important;
-    border-radius: 10px;
 }
 
 .gym-cards {
@@ -69,3 +69,34 @@ i {
     width: 80%;
 }
 
+/*------------------------------ Merchandise - cards */
+.card-img-top {
+    height: 300px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.card {
+    overflow: hidden;
+}
+
+img:hover {
+    transform: scale(1.05);
+    overflow: hidden;
+}
+
+
+/*------------------------------ Merchandise - search bar */
+.search-bar {
+    width: 40%;
+}
+
+/*------------------------------ Merchandise - media queries */
+@media (max-width: 576px) {
+    .card {
+        width: 300px;
+    }
+    .search-bar {
+        width: 250px;
+    }
+}
