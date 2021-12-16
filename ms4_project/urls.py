@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('gym_app.urls')),
+    path('merch/', include('merchandise.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
