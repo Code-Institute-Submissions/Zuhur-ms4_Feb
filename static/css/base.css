@@ -8,6 +8,7 @@
 
 body {
     font-family: 'Unica One', cursive;
+    background-color: #e5e5e5;
 }
 
 .heading-ruler {
@@ -80,7 +81,7 @@ i {
     overflow: hidden;
 }
 
-img:hover {
+.card-img-top:hover {
     transform: scale(1.05);
     overflow: hidden;
 }
@@ -100,3 +101,5 @@ img:hover {
         width: 250px;
     }
 }
+
+/*------------------------------ Merch Detail */

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extend_title %}
+| Merchandise
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row mt-5 justify-content-center">
+        <div class="col-md-6 col-sm-12 my-4">
+            <div class="lg-merch-img text-center">
+                <img src="{{ merch.image_url }}" class="img-fluid" style="object-fit: cover;" alt="">
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12 my-4 my-auto">
+            <div class="row my-4">
+                <div class="col">
+                    <h1>{{ merch.name }}</h1>
+                    <h3>${{ merch.price }}</h3>
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col">
+                    <p> {{ merch.description }} </p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure beatae necessitatibus voluptatem consectetur aut vitae error adipisci laudantium inventore ut modi non et ipsum quisquam nobis impedit, aspernatur iusto quo, similique quod laborum facere quae sunt? Maxime iure architecto nemo error beatae minus qui vel nam nesciunt vitae placeat aspernatur natus obcaecati impedit nulla eaque facilis debitis commodi, blanditiis non? Laudantium magnam beatae totam atque eaque ratione. Totam iste provident culpa accusamus commodi ex architecto ipsam ea similique porro modi, quaerat rem a fugit numquam eligendi odit aliquam sint optio sit eius consequuntur! Atque harum molestiae placeat magni aliquam iure? Aut, reprehenderit nobis non et, quisquam expedita quo ipsam debitis eveniet accusamus unde temporibus praesentium maxime eius consequuntur nisi neque consectetur error, saepe maiores vero distinctio porro. Corporis a, eius eos, quos placeat, est quia fugit neque odio fuga recusandae rem in fugiat temporibus laborum pariatur numquam officiis culpa voluptatum.</p>
+                </div>
+            </div>
+
+            <div class="row my-4">
+                <span class="merch-quantity fs-3">
+                    <div class="add-remove-cart d-inline m-2 py-2 px-3">
+                        <i class="fas fa-minus"></i>
+                        <span class="fs-3"> 0 </span>
+                        <i class="fas fa-plus fs-3"></i>
+                    </div>
+                    <a href="" class="fs-3s">
+                        <button type="button" class="btn btn-primary btn-lg">Add to cart</button>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
