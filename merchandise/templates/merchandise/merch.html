@@ -25,7 +25,13 @@
 
         <div class="row">
             <div class="col text-center">
-                <input class="search-bar" type="text" placeholder="Search">
+                <form action="{% url 'merchandise' %}" method="GET">
+                    <div class="input-group flex-nowrap w-50 mx-auto">
+                        <span class="input-group-text" id="addon-wrapping"><i class="fas fa-search"></i></span>
+                        <input type="text" class="form-control" name="q" placeholder="Search products">
+                    </div>
+                </form>
+
             </div>
         </div>
         <div class="row mt-4">
