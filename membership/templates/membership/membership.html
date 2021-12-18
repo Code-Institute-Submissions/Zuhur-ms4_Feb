@@ -14,5 +14,86 @@
             <hr class="heading-ruler mx-auto">
         </div>
     </div>
+
+    <div class="row mt-4 text-center">
+        <ul class="list-inline">
+            <li class="list-inline-item w-25 py-1">
+                <i class="fas fa-check"></i>
+                <p class="d-inline ps-2">Access to all locations</p>
+            </li>
+            <li class="list-inline-item w-25">
+                <i class="fas fa-check"></i> 
+                <p class="d-inline ps-2">Health bar access</p>
+            </li>
+            <li class="list-inline-item w-25">
+                <i class="fas fa-check"></i> 
+                <p class="d-inline ps-2">Cancel anytime</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="row justify-content-center my-2 py-3 mx-auto">
+        <div class="col-lg-3 col-md-4 col-sm-6 my-2">
+            <div class="card mx-auto h-100">
+                <div class="card-body">
+                    <h3 class="card-title text-center">J</h3>
+                    <h5 class="card-title text-center">Membership</h5>
+                    <ul class="m-2">
+                        <li>24/7 access to our gym</li>
+                        <li>One JOY activity/month included</li>
+                        <li>Free group training</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 my-2">
+            <div class="card mx-auto h-100">
+                <div class="card-body">
+                    <h3 class="card-title text-center">O</h3>
+                    <h5 class="card-title text-center">Membership</h5>
+                    <ul class="m-2">
+                        <li>J benefits included</li>
+                        <li>One JOY activity/week included</li>
+                        <li>Free post workout protein shake from our health bar</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 my-2">
+            <div class="card mx-auto h-100">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Y</h3>
+                    <h5 class="card-title text-center">Membership</h5>
+                    <ul class="m-2">
+                        <li>O benefits included</li>
+                        <li>Two JOY activity/month included</li>
+                        <li>Free pre/post protein shakes from our health bar</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 my-2">
+            <div class="card mx-auto h-100">
+                <div class="card-body">
+                    <h3 class="card-title text-center">!</h3>
+                    <h5 class="card-title text-center">Membership</h5>
+                    <ul class="m-2">
+                        <li>Y benefits included</li>
+                        <li>One joy activity/week</li>
+                        <li>Free togo meal post workout</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if not is_authenticated %}
+    <div class="row my-4">
+        <div class="col text-center">
+            <a type="button" class="btn btn-outline-secondary text-center">Register to become a member</a>
+        </div>
+    </div>
+    {% endif %}
 </div>
+
 {% endblock %}
