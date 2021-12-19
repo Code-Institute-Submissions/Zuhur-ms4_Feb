@@ -43,35 +43,40 @@
             <div class="col-lg-6">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Our Gym</a>
+                        <a class="nav-link" href="{% url 'gym-home' %}#our-gym">Our Gym</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Memberships</a>
+                        <a class="nav-link" href="{% url 'membership' %}">Memberships</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'merch' %}">Merchandise</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="{% url 'gym-home' %}#contact-us">Contact</a>
                     </li>
+                    {% if request.user.is_superuser %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Product Management</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
             <div class="col-lg-3">
                 <ul class="nav justify-content-center">
-                    {% if is_authenticated %}
+                    {% if request.user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Cart</a>
+                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Profile</a>
+                            <a class="nav-link" href="#">cart(0)</a>
                         </li>
-                        {% else %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Join</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Login</a>
-                            </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_signup' %}">Join</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        </li>
                     {% endif %}
                 </ul>
             </div>
