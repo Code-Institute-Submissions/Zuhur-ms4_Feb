@@ -17,7 +17,7 @@
             <div class="col">
                 <ul class="list-inline text-center">
                     <a href="#" class="list-inline-item">Women</a>
-                    <a href="##" class="list-inline-item">Men</a>
+                    <a href="#" class="list-inline-item">Men</a>
                     <a href="#" class="list-inline-item">Other</a>
                 </ul>
             </div>
@@ -25,16 +25,30 @@
 
         <div class="row">
             <div class="col text-center">
-                <form action="{% url 'merchandise' %}" method="GET">
+                <form action="{% url 'merch' %}" method="GET">
                     <div class="input-group flex-nowrap w-50 mx-auto">
                         <span class="input-group-text" id="addon-wrapping"><i class="fas fa-search"></i></span>
                         <input type="text" class="form-control" name="q" placeholder="Search products">
                     </div>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="message-container">
+                                <div class="w-50 mx-auto">
+                                    <p>
+                                        {{ message }}
+                                    </p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
                 </form>
 
             </div>
         </div>
         <div class="row mt-4">
+            {% if not merchandise %}
+                <p>No products match your term</p>
+            {% endif %}
             {% for merch in merchandise %}
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 mx-auto">
