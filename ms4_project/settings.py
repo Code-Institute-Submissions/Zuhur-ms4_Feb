@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'gym_app',
     'merchandise',
     'membership',
+    'bag'
 ]
 
 MIDDLEWARE = [
