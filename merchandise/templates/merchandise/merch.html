@@ -132,10 +132,11 @@
                             <img src="{{merch.image_url}}" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
-                            <h5 class="card-title">{{merch.name}}</h5>
+                            <a href="{% url 'merch-detail' merch.id %}">
+                                <h5 class="card-title">{{merch.name}}</h5>
+                            </a>
                             <p class="card-text">{{merch.description}}</p>
                             <p>€{{merch.price}}</p>
-                            <a href="#" class="btn btn-primary">Buy</a>
                         </div>
                     </div>
                 </div>

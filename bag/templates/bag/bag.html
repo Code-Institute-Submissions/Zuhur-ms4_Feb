@@ -13,5 +13,23 @@
             <hr class="heading-ruler mx-auto mb-4">
         </div>
     </div>
+
+
+    <div class="row">
+        {% if bag_item %}
+            <div class="col">
+
+            </div>
+        {% else %}
+        <div class="col mb-3">
+            <h3 style="border-bottom: 1px solid black; width: fit-content;"> Your bag is empty </h3>
+        </div>
+        <span>
+            <a href="{% url 'merch' %}"><i class="fas fa-long-arrow-alt-left"></i>Continue Shopping</a>
+        </span>
+        
+        {% endif %}
+    </div>
+
 </div>
 {% endblock %}

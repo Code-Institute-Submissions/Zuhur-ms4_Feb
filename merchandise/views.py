@@ -45,7 +45,7 @@ def merchandise(request):
 
 
 def merchandise_detail(request, merch_id):
-    merch = get_object_or_404(Merchandise, merch_id)
+    merch = get_object_or_404(Merchandise, pk=merch_id)
     context = {
         'merch': merch,
     }
