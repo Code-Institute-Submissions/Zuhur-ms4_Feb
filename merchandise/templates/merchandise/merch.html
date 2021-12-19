@@ -7,48 +7,115 @@
 
 {% block content %}
     <div class="container">
+        <!-- Header row starts -->
         <div class="row mt-4">
             <div class="col mt-4 my-2">
                 <h1 class="text-center">Merchandise</h1>
                 <hr class="heading-ruler mx-auto mb-4">
             </div>
         </div>
+        <!-- Header row ends -->
+
+        <!--  -->
         <div class="row">
             <div class="col">
-                <ul class="list-inline text-center">
-                    <a href="#" class="list-inline-item">Women</a>
-                    <a href="#" class="list-inline-item">Men</a>
-                    <a href="#" class="list-inline-item">Other</a>
+                <ul class="list-inline text-center d-flex justify-content-evenly align-items-center px-2 w-50 mx-auto h-100">
+                    <li class="list-inline-item dropdown my-auto">
+                        <a href="#" role="button" data-bs-toggle="dropdown">Women</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown">
+                                <a class="dropdown-item" href="{% url 'merch' %}?category=Women,t_shirt">T-shirts</a>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-item" href="{% url 'merch' %}?category=Women,sweatpants">Sweatpants</a>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-item" href="{% url 'merch' %}?category=Women,hoodie">Hoodie</a>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-item" href="{% url 'merch' %}?category=Women,sport_bra">Sports Bra</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-inline-item dropdown">
+                        <a href="" role="button" data-bs-toggle="dropdown">Men</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown">
+                                <a class="dropdown-item" href="{% url 'merch' %}?category=Men,t_shirt">T-shirts</a>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-item" href="{% url 'merch' %}?category=Men,sweatpants">Sweatpants</a>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-item" href="{% url 'merch' %}?category=Men,hoodie">Hoodie</a>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-item" href="{% url 'merch' %}?category=Men,shorts">Shorts</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-inline-item dropdown">
+                        <a href="" role="button" data-bs-toggle="dropdown">Other</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown">
+                                <a class="dropdown-item" href="{% url 'merch' %}?category=Other,bottle">Bottles</a>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-item" href="{% url 'merch' %}?category=Other,supplement">Supplements</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col text-center">
-                <form action="{% url 'merch' %}" method="GET">
-                    <div class="input-group flex-nowrap w-50 mx-auto">
-                        <span class="input-group-text" id="addon-wrapping"><i class="fas fa-search"></i></span>
-                        <input type="text" class="form-control" name="q" placeholder="Search products">
-                    </div>
-                    {% if messages %}
-                        {% for message in messages %}
-                            <div class="message-container">
-                                <div class="w-50 mx-auto">
-                                    <p>
-                                        {{ message }}
-                                    </p>
+        <!-- Search/filter row start -->
+        <div class="row my-4">
+            <div class="col-6">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Filter
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Lowest price</a></li>
+                        <li><a class="dropdown-item" href="#">Highest price</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6 text-center">
+                <div class="search-bar w-100">
+                    <form action="{% url 'merch' %}" method="GET">
+                        <div class="input-group flex-nowrap">
+                            <span class="input-group-text" id="addon-wrapping"><i class="fas fa-search"></i></span>
+                            <input type="text" class="form-control" name="q" placeholder="Search products">
+                        </div>
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="message-container">
+                                    <div class=" mx-auto">
+                                        <p>
+                                            {{ message }}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                </form>
-
+                            {% endfor %}
+                        {% endif %}
+                    </form>
+                </div>
             </div>
         </div>
+        <!-- Search/filter row ends -->
+
+        <!-- Merchandise content row starts -->
         <div class="row mt-4">
             {% if not merchandise %}
-                <p>No products match your term</p>
+                {% if search_query == None %}
+                    <p>You search returned no results</p>
+                {% else %}
+                    <p>'{{search_query}}' returned no result </p>
+                {% endif %}
             {% endif %}
+
             {% for merch in merchandise %}
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 mx-auto">
@@ -65,22 +132,7 @@
                 </div>
             {% endfor %}
         </div>
-        <!--REMOVE BELOW-->
-        <div class="row mt-4">
-            {% for merch in merchandise %}
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="card h-100 mx-auto">
-                        <img src="{{merch.image_url}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{merch.name}}</h5>
-                            <p class="card-text">{{merch.description}}</p>
-                            <p>€{{merch.price}}</p>
-                            <a href="#" class="btn btn-primary">Buy</a>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
+        <!-- Search/filter row start -->
     </div>
 
 {% endblock %}

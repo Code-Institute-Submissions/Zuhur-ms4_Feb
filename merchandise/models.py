@@ -22,7 +22,6 @@ class Merchandise(models.Model):
     class Meta:
         verbose_name_plural = 'Merchandise'
 
-
     name = models.CharField(max_length=250)
     description = models.TextField()
     sku = models.CharField(max_length=250, null=True, blank=True)

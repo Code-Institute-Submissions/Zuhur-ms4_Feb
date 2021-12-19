@@ -9,8 +9,16 @@ def merchandise(request):
 
     merchandise = Merchandise.objects.all()
     query = None
+    category = None
 
     if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            # First filter by category
+            merchandise = merchandise.filter(category__name__in=categories)
+            # Second filter by gender
+            merchandise = merchandise.filter(gender__name__in=categories)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
