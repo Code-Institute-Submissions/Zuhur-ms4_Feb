@@ -35,6 +35,9 @@
                             <li class="dropdown">
                                 <a class="dropdown-item" href="{% url 'merch' %}?category=Women,sport_bra">Sports Bra</a>
                             </li>
+                            <li class="dropdown">
+                                <a class="dropdown-item" href="{% url 'merch' %}?category=Women,sport_bra,hoodie,sweatpants,t_shirt">All women</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="list-inline-item dropdown">
@@ -52,6 +55,9 @@
                             <li class="dropdown">
                                 <a class="dropdown-item" href="{% url 'merch' %}?category=Men,shorts">Shorts</a>
                             </li>
+                            <li class="dropdown">
+                                <a class="dropdown-item" href="{% url 'merch' %}?category=Men,t_shirt,sweatpants,hoodie,shorts">All men</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="list-inline-item dropdown">
@@ -62,6 +68,9 @@
                             </li>
                             <li class="dropdown">
                                 <a class="dropdown-item" href="{% url 'merch' %}?category=Other,supplement">Supplements</a>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-item" href="{% url 'merch' %}?category=Other,supplement,bottle">All other</a>
                             </li>
                         </ul>
                     </li>
@@ -77,8 +86,8 @@
                         Filter
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Lowest price</a></li>
-                        <li><a class="dropdown-item" href="#">Highest price</a></li>
+                        <li><a class="dropdown-item" href="{% url 'merch' %}?sort=price&direction=asc">Lowest price</a></li>
+                        <li><a class="dropdown-item" href="{% url 'merch' %}?sort=price&direction=desc">Highest price</a></li>
                     </ul>
                 </div>
             </div>
