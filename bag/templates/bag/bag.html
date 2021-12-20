@@ -15,12 +15,74 @@
     </div>
 
 
-    <div class="row">
-        {% if bag_item %}
-            <div class="col">
+    <div class="row justify-content-center my-4">
+        {% if bag_items %}
+        <div class="col-8">
+            <table class="">
+                <tbody>
+                    {% for item in bag_items %}
+                        <tr>
+                            <td class="text-center">
+                                <img src="{{item.merch.image_url}}" alt="..." class="img-thumbnail img-table">
+                            </td>
+                            <td>
+                                <span>Item: {{item.merch.name}}</span>
+                                <p>€{{item.merch.price}}</p>
+                                <span class="text-center">
+                                    <label for="">Quantity: </label>
+                                    <form action="" method=POST>
+                                        {% csrf_token %}
+                                        
+                                    </form>
 
+
+                                    <input class="text-center" type="number" name="quantity" id="quantity" value={{item.quantity}} min=1 max=10 data-item_id="{{ merch.id }}">
+                                </span>
+                            </td>
+                            <td>Total: </td>
+                            <td class="text-center">
+                                <form action="" methods>
+                                    <i class="fas fa-trash-alt"></i>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-uppercase">Total</h5>
+                        {% if not request.user.is_authenticated %}
+                        <p style="font-size: 11px;">Login for an easier experience</p>
+                        <a href="{% url 'account_login' %}" type="button" class="w-100 btn btn-outline-secondary">Login</a>
+                    {% endif %}
+                    <hr>
+                    <table>
+                        <tr>
+                            <td>Order value</td>
+                            <td class="text-end">€{{total}}</td>
+                        </tr>
+                        <tr>
+                            <td>Delivery</td>
+                            <td class="text-end">€4.99</td>
+                        </tr>
+                    </table>
+                    <hr>
+                    <table>
+                        <tr>
+                            <td>Order value</td>
+                            <td class="text-end">€{{grand_total|floatformat:2}}</td>
+                        </tr>
+                    </table>
+                    <a href="" type="button" class="w-100 btn btn-secondary">Continue to checkout</a>
+                </div>
             </div>
+        </div>
         {% else %}
+
+
         <div class="col mb-3">
             <h3 style="border-bottom: 1px solid black; width: fit-content;"> Your bag is empty </h3>
         </div>
