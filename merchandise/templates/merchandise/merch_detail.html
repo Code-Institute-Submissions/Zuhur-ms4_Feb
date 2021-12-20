@@ -30,15 +30,32 @@
                 <div class="col-12">
                     <form action="{% url 'add-to-cart' merch.id %}" method="POST">
                         {% csrf_token %}
-                        <span class="merch-quantity fs-4">
-                            <div class="add-remove-cart d-inline m-2 py-2 px-3">
-                                <span class="text-center">
-                                    <label for="">Quantity: </label>
-                                    <input class="text-center" type="number" name="quantity" id="quantity" value="1" min=1 max=10 data-item_id="{{ merch.id }}">
-                                </span>
+                        <div class="add-to-cart d-inline">
+                            <div class="d-inline">
+                                <button class="decrement-qty btn" 
+                                    data-item_id="{{ merch.id }}" id="decrement-qty_{{ merch.id }}">
+                                    <span class="icon">
+                                        <i class="fas fa-minus"></i>
+                                    </span>
+                                </button>
                             </div>
+
+                            <input class="qty_input" type="number"
+                                name="quantity" value="1" min="1" max="10"
+                                data-item_id="{{ merch.id }}"
+                                id="id_qty_{{ merch.id }}">
+
+
+                            <div class=" d-inline">
+                                <button class="increment-qty btn" 
+                                    data-item_id="{{ merch.id }}" id="increment-qty_{{ merch.id }}">
+                                    <span class="icon">
+                                        <i class="fas fa-plus"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
                             <input type="submit" class="btn btn-primary btn-lg" value="Add to cart">
-                        </span>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </form>
                 </div>
@@ -50,4 +67,9 @@
     </div>
 </div>
 
+{% endblock %}
+
+{% block postjs %}
+{{block.super}}
+{% include 'merchandise/includes/quantity_script.html' %}
 {% endblock %}
