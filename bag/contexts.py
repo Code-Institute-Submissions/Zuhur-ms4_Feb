@@ -13,10 +13,12 @@ def bag_contents(request):
         merch = get_object_or_404(Merchandise, pk=item_id)
         total += Decimal(quantity * merch.price)
         product_count += quantity
+
         bag_items.append({
             'item_id': item_id,
             'quantity': quantity,
             'merch': merch,
+            'item_total': total,
         })
     delivery = Decimal(4.99)
     grand_total = delivery + total

@@ -17,41 +17,71 @@
 
     <div class="row justify-content-center my-4">
         {% if bag_items %}
-        <div class="col-8">
-            <table class="">
+        <div class="col-lg-8 col-md-12">
+            <table class="shopping-bag-items">
                 <tbody>
                     {% for item in bag_items %}
                         <tr>
                             <td class="text-center">
                                 <img src="{{item.merch.image_url}}" alt="..." class="img-thumbnail img-table">
                             </td>
-                            <td>
-                                <span>Item: {{item.merch.name}}</span>
-                                <p>€{{item.merch.price}}</p>
-                                <span class="text-center">
-                                    <label for="">Quantity: </label>
-                                    <form action="" method=POST>
-                                        {% csrf_token %}
-                                        
-                                    </form>
+                            <td class="w-100">
+                                <table class="w-100">
+                                    <tr>
+                                        <td>Item: {{item.merch.name}}</td>
+                                        <td class="text-end">
+                                            <form class="delete-form" action="{% url 'delete-cart' item.item_id %}" method="POST">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>€{{item.merch.price}}</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="quantity">Quantity: </label>
+                                            <form class="edit-form" action="{% url 'edit-cart' item.item_id %}" method="POST">
+                                                {% csrf_token %}
+                                                <div class="add-to-cart d-inline">
+                                                    <div class="d-inline">
+                                                        <button class="decrement-qty btn" 
+                                                            data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                                <i class="fas fa-minus"></i>
+                                                        </button>
+                                                    </div>
+        
+                                                    <input class="qty_input text-center" type="number" name="quantity" value={{item.quantity}} min=1 max=10 id="id_qty_{{ item.item_id}}" data-item_id="{{ item.item_id}}">
+        
+                                                    <div class="d-inline">
+                                                        <button class="increment-qty btn" 
+                                                            data-item_id="{{ item.item_id }}" id="increment-qty_{{item.item_id }}">
+                                                                <i class="fas fa-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <input type="submit" class="btn btn-outline-success" value="Edit">
 
-
-                                    <input class="text-center" type="number" name="quantity" id="quantity" value={{item.quantity}} min=1 max=10 data-item_id="{{ merch.id }}">
-                                </span>
-                            </td>
-                            <td>Total: </td>
-                            <td class="text-center">
-                                <form action="" methods>
-                                    <i class="fas fa-trash-alt"></i>
-                                </form>
+                                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                            </form>
+                                        </td>
+                                        <td class="text-end">Item sum: €{{item.item_total}}</td>
+                                    </tr>
+                                </table>
+                                <hr>
                             </td>
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
-        <div class="col-4">
-            <div class="card" style="width: 18rem;">
+        <div class="col-lg-4 col-md-12">
+            <div class="card" >
                 <div class="card-body">
                     <h5 class="card-title text-uppercase">Total</h5>
                         {% if not request.user.is_authenticated %}
@@ -95,3 +125,9 @@
 
 </div>
 {% endblock %}
+
+{% block postjs %}
+{{block.super}}
+{% include 'merchandise/includes/quantity_script.html' %}
+{% endblock %}
+
