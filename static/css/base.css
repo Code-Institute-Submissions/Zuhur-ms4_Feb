@@ -11,6 +11,12 @@ body {
     background-color: #e5e5e5;
 }
 
+.order-hr{
+    color: #141850 !important;
+    opacity: 1 !important;
+    height: 5px !important;
+}
+
 .heading-ruler {
     width: 4rem;
     color: #fca311 !important;
@@ -114,3 +120,5 @@ i {
 td {
     width: 25%;
 }
+
+/*------------------------------ Checkout Bag */

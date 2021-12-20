@@ -99,14 +99,14 @@
                             <td class="text-end">€4.99</td>
                         </tr>
                     </table>
-                    <hr>
+                    <hr class="order-hr">
                     <table>
                         <tr>
                             <td>Order value</td>
                             <td class="text-end">€{{grand_total|floatformat:2}}</td>
                         </tr>
                     </table>
-                    <a href="" type="button" class="w-100 btn btn-secondary">Continue to checkout</a>
+                    <a href="{% url 'checkout' %}" type="button" class="w-100 btn btn-secondary">Continue to checkout</a>
                 </div>
             </div>
         </div>

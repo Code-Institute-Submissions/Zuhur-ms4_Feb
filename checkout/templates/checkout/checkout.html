@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extend_title %}
+| Checkout
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row mt-4">
+        <div class="col mt-4 my-2">
+            <h1 class="text-center">Checkout</h1>
+            <hr class="heading-ruler mx-auto mb-4">
+        </div>
+    </div>
+    <div class="row m-3">
+        <div class="col-lg-8 col-md-6">
+            <div class="billing-container p-4 my-2">
+                <p>Fill out the form to complete your order</p>
+                <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                    {% csrf_token %}
+                    <fieldset class="my-information">
+                        <legend>My information</legend>
+                        {{ order_form.full_name | as_crispy_field }}
+                        {{ order_form.email | as_crispy_field }}
+                        {{ order_form.phone_number | as_crispy_field }}
+                        
+                    </fieldset>
+                    <fieldset class="billing-address">
+                        <legend>Billing Address</legend>
+                        {{ order_form.address_line_1| as_crispy_field }}
+                        {{ order_form.address_line_2 | as_crispy_field }}
+                        {{ order_form.town_or_city | as_crispy_field }}
+                        {{ order_form.country | as_crispy_field }}
+                        {{ order_form.postcode | as_crispy_field }}
+                    </fieldset>
+
+                    <fieldset class="payment">
+                        <legend class="">Payment</legend>
+                        <!-- A Stripe card element will go here -->
+                        <div class="mb-3" id="card-element"></div>
+
+                        <!-- Used to display form errors -->
+                        <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="card order-summary ms-lg-auto m-4" >
+                <div class="card-body">
+                    <h5 class="card-title text-uppercase">Total</h5>
+                        {% if not request.user.is_authenticated %}
+                        <p style="font-size: 11px;">Login for an easier experience</p>
+                        <a href="{% url 'account_login' %}" type="button" class="w-100 btn btn-outline-secondary">Login</a>
+                    {% endif %}
+                    <hr>
+                    <table class="w-100">
+                        <tr>
+                            <td>Order value</td>
+                            <td class="text-end">€{{total}}</td>
+                        </tr>
+                        <tr>
+                            <td>Delivery</td>
+                            <td class="text-end">€4.99</td>
+                        </tr>
+                    </table>
+                    <hr class="order-hr">
+                    <table class="w-100">
+                        <tr>
+                            <td>Order value</td>
+                            <td class="text-end">€{{grand_total|floatformat:2}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
