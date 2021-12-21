@@ -43,13 +43,13 @@
                         <!-- ALLOW USER TO SAVE THEIR INFO IF THEYRE LOGGED IN-->
                         <div class="form-check form-check-inline float-right mr-0">
                             {% if user.is_authenticated %}
-                                <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
+                                <p class="form-check-label">Save this delivery information to my profile</p>
                                 <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
                             {% else %}
-                                <label class="form-check-label" for="id-save-info">
+                                <div class="form-check-label">
                                     <a class="text-danger" href="{% url 'account_signup' %}">Create an account</a> or 
                                     <a class="text-success" href="{% url 'account_login' %}">login</a> to save this information
-                                </label>
+                                </div>
                             {% endif %}
                         </div>
                         <!-- ALLOW USER TO SAVE THEIR INFO IF THEYRE LOGGED IN-->
@@ -74,7 +74,7 @@
                         <h5 class="card-title text-uppercase">Total</h5>
                         {% if not request.user.is_authenticated %}
                             <p style="font-size: 11px;">Login for an easier experience</p>
-                            <a href="{% url 'account_login' %}" type="button" class="w-100 btn btn-outline-secondary">Login</a>
+                            <a href="{% url 'account_login' %}" class="w-100 btn btn-outline-secondary">Login</a>
                         {% endif %}
                         <hr>
                         <table class="w-100">

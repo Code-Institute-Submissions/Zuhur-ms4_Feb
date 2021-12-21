@@ -45,7 +45,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <label for="quantity">Quantity: </label>
+                                            <p>Quantity: </p>
                                             <form class="edit-form" action="{% url 'edit-cart' item.item_id %}" method="POST">
                                                 {% csrf_token %}
                                                 <div class="add-to-cart d-inline">
@@ -86,7 +86,7 @@
                     <h5 class="card-title text-uppercase">Total</h5>
                         {% if not request.user.is_authenticated %}
                         <p style="font-size: 11px;">Login for an easier experience</p>
-                        <a href="{% url 'account_login' %}" type="button" class="w-100 btn btn-outline-secondary">Login</a>
+                        <a href="{% url 'account_login' %}" class="w-100 btn btn-outline-secondary">Login</a>
                     {% endif %}
                     <hr>
                     <table>
@@ -106,7 +106,7 @@
                             <td class="text-end">€{{grand_total|floatformat:2}}</td>
                         </tr>
                     </table>
-                    <a href="{% url 'checkout' %}" type="button" class="w-100 btn btn-secondary">Continue to checkout</a>
+                    <a href="{% url 'checkout' %}" class="w-100 btn btn-secondary">Continue to checkout</a>
                 </div>
             </div>
         </div>

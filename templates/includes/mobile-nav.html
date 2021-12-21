@@ -13,7 +13,7 @@
             <hr>
         {% endif %}
         <li class="nav-item">
-            <a class="nav-link active"href="{% url 'gym-home' %}#our-gym">Our gym</a>
+            <a class="nav-link active" href="{% url 'gym-home' %}#our-gym">Our gym</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{% url 'membership' %}">Memberships</a>
@@ -24,7 +24,10 @@
         <li class="nav-item">
             <a class="nav-link" href="{% url 'gym-home' %}#contact-us">Contact</a>
         </li>
-        <hr>
+        <li class="nav-item">
+            <hr>
+        </li>
+        
         {% if request.user.is_authenticated %}
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>

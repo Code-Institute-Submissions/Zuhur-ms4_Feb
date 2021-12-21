@@ -38,23 +38,23 @@
             <div class="col-lg-3">
                 <ul class="nav justify-content-center">
                     <li class="nav-item pt-1">
-                        <a class="navbar-brand" href="{% url 'gym-home' %}">Jogym</a>
+                        <a class="navbar-brand" href= "{% url 'gym-home' %}">Jogym</a>
                     </li>
                 </ul>
             </div>
             <div class="col-lg-6">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'gym-home' %}#our-gym">Our Gym</a>
+                        <a class="nav-link" href= "{% url 'gym-home' %}#our-gym">Our Gym</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'membership' %}">Memberships</a>
+                        <a class="nav-link" href= "{% url 'membership' %}">Memberships</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'merch' %}">Merchandise</a>
+                        <a class="nav-link" href= "{% url 'merch' %}">Merchandise</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'gym-home' %}#contact-us">Contact</a>
+                        <a class="nav-link" href= "{% url 'gym-home' %}#contact-us">Contact</a>
                     </li>
                     {% if request.user.is_superuser %}
                         <li class="nav-item">
@@ -88,7 +88,7 @@
         <!-- Mobile header goes here -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light d-lg-none">
             <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dropdown-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dropdown-nav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <a class="navbar-brand me-auto ps-3" href="{% url 'gym-home' %}">Jogym</a>

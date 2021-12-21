@@ -27,11 +27,6 @@ body {
 
 /*------------------------------ HOME - carousel */
 
-#carousel-1 {
-    background: url('/media/gym-background.jpg') center center no-repeat; 
-    background-size: cover;
-}
-
 .carousel-item {
     height: 85vh;
     width: 100vw;
