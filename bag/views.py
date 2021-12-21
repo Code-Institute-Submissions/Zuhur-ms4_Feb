@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render, reverse
 
-# Create your views here.
+
 def view_bag(request):
     return render(request, 'bag/bag.html')
 

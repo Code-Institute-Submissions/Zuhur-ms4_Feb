@@ -22,7 +22,6 @@ def bag_contents(request):
         })
     delivery = Decimal(4.99)
     grand_total = delivery + total
-    
     context = {
         'bag_items': bag_items,
         'total': total,
@@ -30,4 +29,4 @@ def bag_contents(request):
         'delivery': delivery,
         'grand_total': grand_total
     }
-    return context 
+    return context

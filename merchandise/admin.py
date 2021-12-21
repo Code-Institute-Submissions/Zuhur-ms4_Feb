@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Merchandise, Category, Gender
 
-# Register your models here.
 
 class MerchandiseAdmin(admin.ModelAdmin):
     list_display = (
@@ -9,6 +8,7 @@ class MerchandiseAdmin(admin.ModelAdmin):
         'category',
         'price',
     )
+
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (

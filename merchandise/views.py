@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.db.models import Q
 from .models import Merchandise
 
-# Create your views here.
+
 def merchandise(request):
 
     merchandise = Merchandise.objects.all()

@@ -7,12 +7,11 @@ from merchandise.models import Merchandise
 from .models import Order, OrderLineItem
 from .forms import OrderForm
 
-# Create your views here.
 
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-    
+
     if request.method == 'POST':
         cart = request.session.get('cart', {})
         form_data = {
@@ -31,14 +30,15 @@ def checkout(request):
             for item_id, quantity in cart.items():
                 merch = Merchandise.objects.get(id=item_id)
                 order_line_item = OrderLineItem(
-                    order = order,
-                    merch = merch,
-                    quantity = quantity,
+                    order=order,
+                    merch=merch,
+                    quantity=quantity,
                 )
                 order_line_item.save()
             request.session['save_details'] = 'save-details' in request.POST
-            
-            return redirect(reverse('checkout-success', args=[order.order_number]))
+
+            return redirect(reverse('checkout-success',
+                                    args=[order.order_number]))
 
     else:
         cart = request.session.get('cart', {})
@@ -67,15 +67,12 @@ def checkout(request):
 def checkout_success(request, order_number):
     save_details = request.session.get('save_details')
     order = get_object_or_404(Order, order_number=order_number)
-    messages.success(request, f'Order successful! Your order number is {order_number}')
 
     if 'cart' in request.session:
         del request.session['cart']
-    
+
     context = {
         'order': order,
     }
 
     return render(request, 'checkout/checkout_success.html', context)
-
-

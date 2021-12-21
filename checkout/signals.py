@@ -6,11 +6,11 @@ from .models import Order, OrderLineItem
 
 @receiver(post_save, sender=OrderLineItem)
 def update_on_save(sender, instance, created, **kwarg):
-    
+
     instance.order.update_total()
 
 
 @receiver(post_delete, sender=OrderLineItem)
 def update_on_delete(sender, instance, **kwargs):
-    
+
     instance.order.update_total()
