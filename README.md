@@ -1,108 +1,128 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# JO<s>G</s>Y<s>M</s>
 
-Welcome USER_NAME,
+**Milestone 4 project for Code institute Software Development Programme.**
+[Live site](https://milestone-four.herokuapp.com/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Table of contents
+-   [User Experience](#user-experience)
+-   [Design](#design)
+    *   [Wireframes](#wireframes)
+    *   [Database Schema](#database-schema)
+    *   [Colours](#colours)
+    *   [Fonts](#fonts)
+-   [Features](#features)
+    *   [Existing Features](#existing-features) 
+-   [Technologies](#technologies)   
+-   [Testing](#testing)
+-   [Deployment](#deployment)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
 
-## Gitpod Reminders
+## User Experience
+JOGYM is website for an alternate gym, providing all fundamentals required for a regular gym, but also offers a host of various physical activities such as indoor paintballing, rock climbing etc. to allow members to experience some joy in the gym when working out becomes repetitive or a plateau stagnates the workout. The gym offers monthly and annual subscriptions as well as an ecommerce section to provide merchandise to all users. This app is a Full Stack website created using the Django framework with a backend of PostgresSQL. <br>
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Follow [this](/readme_files/ms4-user-stories.png) link to see a detailed view of the user stories.
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+## Design
+### Wireframes
+The wireframes were designed using the balsamiq tool for different sections and screen sizes. These can be found [here](/readme_files/ms4-wireframes.pdf).
 
-Another blue button should appear to click: _Open Browser_.
+### Database Schema
+The database schema was designed using diagrams.net and can be found [here](/readme_files/ms4-schema.jpg)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Colours
+The colour palette was selected using Coolors website and can be found [here](/readme_files/ms4-palette.png)
 
-A blue button should appear to click: _Make Public_,
+### Fonts
+Google fonts: Unica One
 
-Another blue button should appear to click: _Open Browser_.
+## Features
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### Existing Features
+Navigation bar: Responsive nav bar is present on all pages. If a user is logged in links to join/login are no longer present, and if the user is the admin they have a access to a product management link (yet to be developed).
 
-To log into the Heroku toolbelt CLI:
+Home page: Contains images of the gym showing various activities, scrolling down presents users with a concise about 'our gym' section. Any further questions invites user to contact us form for further information.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+Products page: There is a search bar which allows terms found in title or description of an item. Users can filter by gender and further more by price. Navigation to further product detail is also provided through clicking image or the item name.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+Item detail: Merchandise-detail page displays individual item information and allows user to add items to cart which increments/decrements everytime an item is added/removed to the cart. Furthermore they can choose to continue shopping or click the cart to navigate to the checkout page.
 
-------
+Checkout page: User is prompted to fill in the form to process payment. With successful registration, they are redirected to a confirmations page and provided with an order summary. Should the user want to delete all orders, text is shown that their bag is empty and a link to take them back to continue shopping.
 
-## Release History
+Join/login: These pages are designed with help of django-allauth and handles user registration, login and logout details.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Technologies
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+-	HTML5: For the structure of the site.
+-	CSS3: For styling of the site.
+-	Bootsrap5: For fast development of the site and its responsiveness.
+-	Fontawesome: For visual icons.
+-	Github: For remote access of the project.
+-	Git: For version-control.
+-	Visual Studio Code: A development environment as an upgrade to gitpod.
+-	SQLite3: As the database for storing users data during development.
+- PostgresSQL: As the database for storing users data during production.
+- Python/Django: Used for the backend and for communication with mongodb.
+- Heroku: Deployment of project.
+- AWS S3 Bucket: As remote storage for static and media files.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## Testing
+1. [PEP8](http://pep8online.com/) was used to check python file, until file was pep8 compliant. <br>
+2. The HTML validator used was [https://validator.w3.org/](https://validator.w3.org/). Several errors caught due to jinja the other errors were corrected until no errors shown. <br>
+3. The CSS validator used was [https://jigsaw.w3.org/css-validator/validator]( https://jigsaw.w3.org/css-validator/validator). <br>
+Google devtools was used to make sure the site is responsive to different devices and screen sizes. <br>
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Manual Testing
+#### Testing of user stories
+Testing was carried out based on if the requirements for the user stories where met and can be found [here](/readme_files/ms4-testing.png). Due to the size of this project it was not possible to meet the requirements of all the user stories. More will be discussed in future implementations.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+#### Future Features
+The main feature required to be developed is the membership aspect of the website. Manual and annual subscriptions with automatic withdrawal of payment is the next step. Although users can filter products, filtering the price based on the categories rather than entire products list will also be implemented.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+#### Bugs
+Although static files are rendered somehow the images for the carousel stored within media are not rendering. Further testing is required to fix this bug.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+## Deployment
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### To clone repository
+- Open [this](https://github.com/Zuhur/ms4) repository
+- Select code in the following and clone using HTTPS or SSH
+- Select the working directory you would like the repo to be cloned
+- Type ‘git clone’ followed by URL decided above
+- Create an env.py file as shown below, while replacing values with password and the name of the database <br/>
+`import os` <br/>
+`  os.environ.setdefault("DEVELOPMENT", "True")` <br/>
+`  os.environ.setdefault("STRIPE_PUBLIC_KEY", <PUBLICKEY>)` <br/>
+`  os.environ.setdefault("STRIPE_SECRET_KEY", <SECRETKEY>)` <br/>
+`  os.environ.setdefault("STRIPE_WH_SECRET", <SECRET-WH-KEY>)` <br/>
+- Install all the required requirements `pip3 install -r requirements.txt`
+- Load data from db.json file
+- Create superuser and run the application with `python3 manage.py runserver`
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### To Heroku
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- Login / sign up to Heroku
+- Create a new app
+- Select unique app-name
+- Choose appropriate region
+- Make sure there is a requirements.txt and Procfile since Heroku requires these.
+- Heroku cannot read env.py files therefore the contents need to be manually input into config vars (via settings) 
+- Enter values in env.py into config vars
+- Push all code to GitHub
+- Enable automatic deployment to allow automatic update when code pushed to GitHub
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Credits
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+### Images
+From Pexels, picabay and unsplash <br>
+Carousel images
+  1. https://www.pexels.com/photo/bright-close-up-color-colorful-221247/
+  2. https://cdn.pixabay.com/photo/2018/08/22/14/31/paintball-3623794_960_720.jpg
+  3. https://unsplash.com/photos/20jX9b35r_M
+Product images
+  1. https://cdn.pixabay.com/photo/2017/07/02/19/24/dumbbells-2465478_960_720.jpg
+  2. https://images.unsplash.com/photo-1602143407151-7111542de6e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2F0ZXIlMjBib3R0bGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60
+  3. https://cdn.pixabay.com/photo/2020/05/15/10/20/sweatpants-5173125_960_720.jpg
+  4. https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmxhY2slMjB0c2hpcnR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60
+  5. https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80
