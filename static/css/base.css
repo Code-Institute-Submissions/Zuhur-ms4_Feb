@@ -26,16 +26,32 @@ body {
 }
 
 /*------------------------------ HOME - carousel */
-
 .carousel-item {
     height: 85vh;
-    width: 100vw;
-    background-color: white;
+    width: 100%;
+    background-color: #e5e5e5;
+}
+
+.carousel-img1 {
+    background: url('/media/gym-background.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+.carousel-img2 {
+    background: url('/media/paintball-big.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+.carousel-img3 {
+    background: url('/media/colorful-weights-bg.jpg') center center no-repeat;
+    background-size: cover;
 }
 
 .carousel-indicators [data-bs-target] {
     background-color: blue;
 }
+
+
 /*------------------------------ HOME - our gym */
 
 #our-gym {
@@ -43,7 +59,7 @@ body {
     color: #e5e5e5;
 }
 
-.gym-description {
+.section-title {
     width: 70%;
     margin: 0 auto;
 }
@@ -72,10 +88,11 @@ i {
     background-color: #e5e5e5;
 }
 
-.contact-content {
+.contact-container {
     padding-top: 10px;
-    width: 80%;
+    width: 60%;
 }
+
 
 /*------------------------------ Merchandise - cards */
 .card-img-top {
@@ -123,3 +140,31 @@ td {
 }
 
 /*------------------------------ Checkout Bag */
+
+/*------------------------------ Footer */
+
+footer {
+    background-color: #202020;
+    color: #e5e5e5;
+}
+
+.footer-details {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.footer-copyright {
+    width: 75%;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .footer-details, .footer-copyright  {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+footer h5 {
+    color: #fca311;
+}
