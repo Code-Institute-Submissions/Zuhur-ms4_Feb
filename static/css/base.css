@@ -25,6 +25,27 @@ body {
     border-radius: 10px;
 }
 
+/*------------------------------ Desktop - Header */
+
+header {
+    background-color: #202020;
+}
+
+.navbar-brand {
+    color: #e5e5e5;
+}
+.nav-link {
+    color: #b9b9b9;
+}
+.cart {
+    color: #e5e5e5;
+}
+/*------------------------------ Mobile - Header */
+
+nav {
+    background-color: #202020;
+}
+
 /*------------------------------ HOME - carousel */
 .carousel-item {
     height: 85vh;

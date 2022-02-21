@@ -1,6 +1,6 @@
 <ul class="nav">
     <li class="nav-item">
-        <a class="nav-link" href="{% url 'view-bag' %}">Cart({{product_count}})</a>
+        <a class="nav-link cart" href="{% url 'view-bag' %}">Cart({{product_count}})</a>
     </li>
 </ul>
 
@@ -25,7 +25,7 @@
             <a class="nav-link" href="{% url 'gym-home' %}#contact-us">Contact</a>
         </li>
         <li class="nav-item">
-            <hr>
+            <hr style="opacity: 1; background: #fca311;">
         </li>
         
         {% if request.user.is_authenticated %}
