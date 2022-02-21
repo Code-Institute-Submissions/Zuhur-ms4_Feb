@@ -69,9 +69,20 @@ nav {
 }
 
 .carousel-indicators [data-bs-target] {
-    background-color: blue;
+    background-color: yellow;
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
 }
 
+.carousel h3 {
+    color: yellow;
+}
+
+.carousel-caption .btn {
+    background-color: #202020;
+    color: white;
+}
 
 /*------------------------------ HOME - our gym */
 
