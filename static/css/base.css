@@ -200,3 +200,10 @@ footer {
 footer h5 {
     color: #fca311;
 }
+
+/*------------------------------ Allauth accounts */
+
+.allauth-container {
+    background-color: #e5e5e5;
+    height: 80vh;
+}
