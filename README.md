@@ -84,33 +84,53 @@ Although static files are rendered somehow the images for the carousel stored wi
 
 
 ## Deployment
+**Note:** A Stripe account is required to have a functioning payment system.
 
-### To clone repository
-- Open [this](https://github.com/Zuhur/ms4) repository
-- Select code in the following and clone using HTTPS or SSH
-- Select the working directory you would like the repo to be cloned
-- Type ‘git clone’ followed by URL decided above
-- Create an env.py file as shown below, while replacing values with password and the name of the database <br/>
+### Local deployment
+**Cloning repository**
+1. Open [this](https://github.com/Zuhur/ms4) repository.
+2. Select 'code' button in the top right corner of this repo, and clone using HTTPS or SSH.
+- Alternatively, copy `git clone git@github.com:Zuhur/ms4.git` for cloning using SSH or `git clone https://github.com/Zuhur/ms4.git` into the terminal
+
+**Setting up environment variables**
+3. Create an env.py file
+4. Add env.py to .gitignore <br/>
 `import os` <br/>
 `  os.environ.setdefault("DEVELOPMENT", "True")` <br/>
 `  os.environ.setdefault("STRIPE_PUBLIC_KEY", <PUBLICKEY>)` <br/>
 `  os.environ.setdefault("STRIPE_SECRET_KEY", <SECRETKEY>)` <br/>
 `  os.environ.setdefault("STRIPE_WH_SECRET", <SECRET-WH-KEY>)` <br/>
-- Install all the required requirements `pip3 install -r requirements.txt`
-- Load data from db.json file
-- Create superuser and run the application with `python3 manage.py runserver`
+5. Install all the required requirements with `pip3 install -r requirements.txt` in your terminal
+6. To create a database, migrate the models using the following commands inside the terminal. <br/>
+`python3 manage.py makemigrations` <br/>
+`python3 manage.py migrate` <br/>
+7. Load the data fixtures from the db.json file <br/>
+`python3 manage.py loaddata db.json` <br/>
+8. To log in to the Django Admin site create a superuser <br/>
+`python3 manage.py createsuperuser`
+9. To run the application <br/>
+`python3 manage.py runserver`
 
-### To Heroku
-
-- Login / sign up to Heroku
-- Create a new app
-- Select unique app-name
-- Choose appropriate region
-- Make sure there is a requirements.txt and Procfile since Heroku requires these.
-- Heroku cannot read env.py files therefore the contents need to be manually input into config vars (via settings) 
-- Enter values in env.py into config vars
-- Push all code to GitHub
-- Enable automatic deployment to allow automatic update when code pushed to GitHub
+### Heroku deployment
+**Note:** Static and media files are hosted in AWS S3 Bucket. An account will be required for this. For more information into how to set this up follow this [link](https://docs.aws.amazon.com/AmazonS3/latest/userguide/GetStartedWithS3.html).
+1. Login / sign up to Heroku
+2. Create a new app
+3. Set up Config Vars in settings  <br/>
+`AWS_ACCESS_KEY_ID` = AWS access key <br/>
+`AWS_SECRET_ACCESS_KEY` = AWS secret access key  <br/>
+`DATABASE_URL` = postgrest database url - heroku  <br/>
+`EMAIL_HOST_PASS` = email password <br/>
+`EMAIL_HOST_USER` = email address <br/>
+`SECRET_KEY` <br/> 
+`STRIPE_PUBLIC_KEY` = stripe public key <br/>
+`STRIPE_SECRET_KEY` = stripe secret key <br/>
+`STRIPE_WH_SECRET` = stripe wh key <br/>
+`USE_AWS` = True <br/>
+**Connect Heroku to Github to automatically deploy after every push to github.**
+4.Select 'Deploy' from the navbar <br/>
+5. Select Github from the' Deployment method' section <br/>
+6. In the 'App connected to Github' section enter the name of github repository and connect <br/>
+7. After successful connection in the 'Automatic deploys' section select 'Enable Automatic Deploys' <br/>
 
 ## Credits
 
