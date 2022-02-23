@@ -22,10 +22,10 @@
                 <a href="{% url 'add-product' %}"> <i class="fas fa-less-than p-2"></i> Add a new merchandise</a>
             </li>
             <li class="action">
-                <a href=""> <i class="fas fa-less-than p-2"></i> Edit an exisiting merchandise</a>
+                <a href="{% url 'merch' %}"> <i class="fas fa-less-than p-2"></i> Edit an exisiting merchandise</a>
             </li>
-            <livclass="action">
-                <a href=""> <i class="fas fa-less-than p-2"></i> Delete merchandise</a>
+            <li class="action">
+                <a href="{% url 'merch' %}"> <i class="fas fa-less-than p-2"></i> Delete merchandise</a>
             </li>
         </ul>
     </div>
