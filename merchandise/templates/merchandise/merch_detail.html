@@ -6,6 +6,25 @@
 {% endblock %}
 
 {% block content %}
+
+{% if request.user.is_superuser %}
+<div class="product-management-header" style="background-color: darkgray;">
+    <div class="row w-50 mx-auto p-2">
+        <div class="col-4 text-center">
+            <a href="{% url 'add-product' %}">Add new product</a>
+        </div>
+        <div class="col-4 text-center"> 
+            <a href="{% url 'edit-product' merch.id %}">Edit product</a>
+        </div>
+        <div class="col-4 text-center">
+            <a href="">Delete product</a>
+        </div>
+    </div>
+</div>
+{% endif  %}
+
+
+
 <div class="container-fluid">
     <div class="row mt-5 justify-content-center">
         <div class="col-md-6 col-sm-12 my-4">
