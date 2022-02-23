@@ -214,9 +214,13 @@ footer h5 {
     min-height: 90vh;
 }
 
-.action,a {
+.action {
     color: grey;
     list-style-type: none ;
+}
+
+.action a {
+    color: grey;
 }
 
 
@@ -227,4 +231,8 @@ footer h5 {
     color: #e5e5e5;
     width: 50%;
     margin: 0 auto;
+}
+
+.product_detail_header {
+    color: black;
 }
