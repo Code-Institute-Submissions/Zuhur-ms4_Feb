@@ -211,10 +211,20 @@ footer h5 {
 /*------------------------------ Product management */
 
 .management-container {
-    height: 90vh;
+    min-height: 90vh;
 }
 
 .action,a {
     color: grey;
     list-style-type: none ;
+}
+
+
+/*------------------------------ Add product */
+
+.add_product_container {
+    background-color: #14213d;
+    color: #e5e5e5;
+    width: 50%;
+    margin: 0 auto;
 }

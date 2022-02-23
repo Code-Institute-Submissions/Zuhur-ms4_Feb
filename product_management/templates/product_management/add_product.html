@@ -11,9 +11,28 @@
     <!-- Header row starts -->
     <div class="row mt-4">
         <div class="col mt-4 my-2">
-            <h1 class="text-center">Edit Product</h1>
+            <h1 class="text-center">Add Product</h1>
             <hr class="heading-ruler mx-auto mb-4">
         </div>
+    </div>
+    
+    <div class="product_form_container w-75 mx-auto p-2">
+        
+    </div>
+
+    <div class="add_product_container">
+        <form class=" mb-4 mx-3 p-3" method='POST' action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.name | as_crispy_field}}
+            {{ form.description | as_crispy_field}}
+            {{ form.sku | as_crispy_field}}
+            {{ form.category | as_crispy_field}}
+            {{ form.gender | as_crispy_field}}
+            {{ form.price | as_crispy_field}}
+            {{ form.image_url | as_crispy_field}}
+            {{ form.image | as_crispy_field}}
+            <button type="submit" class="btn btn-success my-3">Add product</button>
+        </form>
     </div>
 </div>
 
