@@ -216,4 +216,5 @@ footer h5 {
 
 .action,a {
     color: grey;
+    list-style-type: none ;
 }
