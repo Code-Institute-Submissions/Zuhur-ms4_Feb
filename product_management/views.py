@@ -37,3 +37,16 @@ def edit_product(request, pk):
         'form': form
     }
     return render(request, 'product_management/edit_product.html', context)
+
+
+def delete_product(request, pk):
+    merch = Merchandise.objects.get(id=pk)
+
+    if request.method == 'POST':
+        merch.delete()
+        return redirect(reverse('merch'))
+
+    context = {
+        'product': merch,
+    }
+    return render(request, 'product_management/delete_product.html', context)

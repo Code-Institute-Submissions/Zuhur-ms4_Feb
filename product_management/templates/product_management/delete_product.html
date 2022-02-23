@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extend_title %}
+| Product Management
+{% endblock %}
+
+{% block content %}
+
+<div class="management-container">
+    <!-- Header row starts -->
+    <div class="row mt-4">
+        <div class="col mt-4 my-2">
+            <h1 class="text-center">Delete Product</h1>
+            <hr class="heading-ruler mx-auto mb-4">
+        </div>
+    </div>
+    
+    <div class="delete_form_container w-75 mx-auto p-2">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <p>Are you sure you to delete "{{product}}"</p>
+            <a class="btn btn-primary" href="{% url 'merch' %}" role="button">Cancel</a>
+            <button type="submit" class="btn btn-light my-3">Delete</button>
+        </form>
+        
+    </div>
+
+</div>
+
+{% endblock %}
