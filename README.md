@@ -79,9 +79,6 @@ Testing was carried out based on if the requirements for the user stories where 
 #### Future Features
 The main feature required to be developed is the membership aspect of the website. Manual and annual subscriptions with automatic withdrawal of payment is the next step. Although users can filter products, filtering the price based on the categories rather than entire products list will also be implemented.
 
-#### Bugs
-Although static files are rendered somehow the images for the carousel stored within media are not rendering. Further testing is required to fix this bug.
-
 
 ## Deployment
 **Note:** A Stripe account is required to have a functioning payment system.
