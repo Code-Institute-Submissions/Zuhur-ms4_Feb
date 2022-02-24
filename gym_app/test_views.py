@@ -4,7 +4,7 @@ from django.test import TestCase
 
 class TestViews(TestCase):
     # Test to see if shopping bag template is rendered
-     def test_get_shopping_bag(self):
-         response = self.client.get('/bag/')
+     def test_get_home_page(self):
+         response = self.client.get('/')
          self.assertEqual(response.status_code, 200)
-         self.assertTemplateUsed(response, 'bag/bag.html')
+         self.assertTemplateUsed(response, 'gym_app/home.html')
