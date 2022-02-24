@@ -6,8 +6,10 @@ from merchandise.views import merchandise
 from .forms import ProductForm
 # Create your views here.
 
+
 def product_management(request):
     return render(request, 'product_management/product_management.html')
+
 
 def add_product(request):
     form = ProductForm()

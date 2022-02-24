@@ -17,7 +17,7 @@
     </div>
     
     <div class="delete_form_container w-75 mx-auto p-2">
-        <form action="" method="POST">
+        <form method="POST">
             {% csrf_token %}
             <p>Are you sure you to delete "{{product}}"</p>
             <a class="btn btn-primary" href="{% url 'merch-detail' product.id %}" role="button">Cancel</a>

@@ -21,7 +21,7 @@
     </div>
 
     <div class="add_product_container">
-        <form class=" mb-4 mx-3 p-3" method='POST' action="" enctype="multipart/form-data">
+        <form class=" mb-4 mx-3 p-3" method='POST' enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.name | as_crispy_field}}
             {{ form.description | as_crispy_field}}
